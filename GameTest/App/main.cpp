@@ -38,7 +38,7 @@ extern void Update(float deltaTime);
 extern void Render();
 extern void Shutdown();
 //---------------------------------------------------------------------------------
-void StartCounter()
+void StartCounter() // for performance metrics
 {
 	LARGE_INTEGER li;
 	if (!QueryPerformanceFrequency(&li))
@@ -162,12 +162,13 @@ void Idle()
 			WINDOW_HEIGHT = tileClientArea.bottom - tileClientArea.top;
 		}
 
-		if (App::GetController().CheckButton(APP_ENABLE_DEBUG_INFO_BUTTON) )
+		if (App::GetController().CheckButton(APP_ENABLE_DEBUG_INFO_BUTTON) )		//press up to view debug info
+
 		{
 			gRenderUpdateTimes = !gRenderUpdateTimes;
 		}
 
-		if (App::IsKeyPressed(APP_QUIT_KEY))
+		if (App::IsKeyPressed(APP_QUIT_KEY)) //press esc to quit
 		{		
 			glutLeaveMainLoop();
 		}
