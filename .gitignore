@@ -26,6 +26,7 @@
 *.la
 *.a
 *.lib
+!freeglut.lib
 
 # Executables
 *.exe
@@ -34,6 +35,5 @@
 
 # User Defined
 .vs
-*.vcxproj*
 x64
-!GameTest/glut/bin/x64
+!GameTest/glut/*/x64
